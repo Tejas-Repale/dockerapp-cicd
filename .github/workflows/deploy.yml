@@ -33,7 +33,7 @@ jobs:
         username: ${{ secrets.EC2_USER }}
         key: ${{ secrets.EC2_KEY }}
         script: |
-          docker pull ${{ secrets.DOCKERHUB_USERNAME }}/flask-task-manager:latest
-          docker stop flask-task-manager || true
-          docker rm flask-task-manager || true
-          docker run -d -p 80:5000 --name flask-task-manager ${{ secrets.DOCKERHUB_USERNAME }}/flask-task-manager:latest
+          sudo docker pull ${{ secrets.DOCKERHUB_USERNAME }}/flask-task-manager:latest
+          sudo docker stop flask-task-manager || true
+          sudo docker rm flask-task-manager || true
+          sudo docker run -d -p 80:5000 --name flask-task-manager ${{ secrets.DOCKERHUB_USERNAME }}/flask-task-manager:latest
